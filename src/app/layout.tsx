@@ -12,21 +12,15 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  title: "Raja Gurame",
-  description: "Restoran olahan ikan gurame terbaik",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="acid">
       <body>
-      <nav className="bg-purple-700 shadow-md sticky top-0 z-50">
+      <nav className="bg-white-700 shadow-md sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
             
