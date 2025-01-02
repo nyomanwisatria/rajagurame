@@ -132,3 +132,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Footer */}
+      <footer className="bg-orange-600 text-white text-center py-4">
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()} Raja Gurame. All rights reserved.
+        </p>
+      </footer>
+    </div>
+  );
+}
