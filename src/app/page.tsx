@@ -168,7 +168,12 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg z-50">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="flex justify-between items-center h-16">
-            <div className="text-lg font-bold text-orange-600">Raja Gurame</div>
+          <div className="flex items-center">
+          <div className="flex items-center">
+          <img src="loogo.png" alt="Logo Raja Gurame" className="h-50 w-40 mr-2" />
+          <div className="text-xl font-bold text-orange-600">Raja Gurame</div>
+        </div>
+          </div>
             <div className="space-x-6">
               <a
                 href="#home"
