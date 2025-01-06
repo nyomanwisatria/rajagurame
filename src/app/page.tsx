@@ -170,9 +170,8 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
           <div className="flex items-center">
-          <img src="loogo.png" alt="Logo Raja Gurame" className="h-50 w-40 mr-2" />
-          <div className="text-xl font-bold text-orange-600">Raja Gurame</div>
-        </div>
+          <img src="logo.png" alt="Logo Raja Gurame" className="h-25 w-20 m-2" />
+          </div>
           </div>
             <div className="space-x-6">
               <a
