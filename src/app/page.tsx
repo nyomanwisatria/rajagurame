@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; 
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("Makanan");
@@ -278,7 +278,7 @@ export default function Home() {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-32 object-cover rounded"
+                    className="w-full h-50 object-cover rounded"
                   />
                   <h3 className="mt-2 text-xl font-semibold text-gray-800">
                     {item.name}
