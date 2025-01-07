@@ -201,7 +201,7 @@ export default function Home() {
               <div className="flex items-center">
                 <div className="flex items-center">
                 <p className="h-25 w-20 m-2 text-black inline-block whitespace-nowrap text-2xl font-bold">
-                    Raja Gurame
+                    Pondek Santap Raja Gurame
                   </p>
                 </div>
               </div>
@@ -339,30 +339,81 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-3xl font-bold text-orange-700">Hubungi Kami</h3>
-          <div className="mt-8 max-w-md mx-auto text-left">
-            <p className="text-gray-600 mb-2">
-              <strong>Alamat:</strong> Pondok Santap Raja Gurame, Gg. Sawo II
-              No.33, Segala Mider, Kec. Tj. Karang Bar., Kota Bandar Lampung,
-              Lampung 35125
-            </p>
-            <p className="text-gray-600 mb-2">
-              <strong>Telepon:</strong> 082281431287
-            </p>
-            <p className="text-gray-600 mb-2">
-              <strong>Email:</strong> wisatrianyoman@gmail.com
-            </p>
-            <p className="text-gray-600">
-              <strong>Jam Operasional:</strong>
-              <br />
-              Senin - Minggu: 10:00 - 22:00
-            </p>
+     {/* Contact Section */}
+<section id="contact" className="py-16 bg-white">
+  <div className="container mx-auto px-4 text-center">
+    <h3 className="text-3xl font-bold text-orange-700">Hubungi Kami</h3>
+    <div className="mt-8 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      {/* Contact Information */}
+      <div className="text-left">
+        <div className="bg-orange-50 p-6 rounded-lg shadow-sm">
+          <p className="text-gray-600 mb-4">
+            <strong className="text-orange-700">Alamat:</strong>
+            <br />
+            <a 
+              href="https://maps.app.goo.gl/3cghUowX7W1QGydk7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-orange-600 transition-colors"
+            >
+              Pondok Santap Raja Gurame, Gg. Sawo II No.33, Segala Mider, 
+              Kec. Tj. Karang Bar., Kota Bandar Lampung, Lampung 35125
+            </a>
+          </p>
+          <p className="text-gray-600 mb-4">
+            <strong className="text-orange-700">Telepon:</strong>
+            <br />
+            <a 
+              href="tel:082281431287"
+              className="hover:text-orange-600 transition-colors"
+            >
+              082281431287
+            </a>
+          </p>
+          <p className="text-gray-600 mb-4">
+            <strong className="text-orange-700">Email:</strong>
+            <br />
+            <a 
+              href="mailto:wisatrianyoman@gmail.com"
+              className="hover:text-orange-600 transition-colors"
+            >
+              wisatrianyoman@gmail.com
+            </a>
+          </p>
+          <div className="text-gray-600">
+            <strong className="text-orange-700">Jam Operasional:</strong>
+            <br />
+            <span className="block mt-1">Senin - Minggu: 10:00 - 22:00</span>
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Google Maps Embed */}
+      <div className="h-[400px] relative rounded-lg overflow-hidden shadow-lg">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.3518444431787!2d105.2422699!3d-5.3971285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dad63412da7b%3A0x4a76f161cb13fc57!2sRaja%20Gurame!5e0!3m2!1sid!2sid!4v1665547233752!5m2!1sid!2sid"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen={true}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="absolute inset-0"
+        ></iframe>
+        <div className="absolute bottom-4 right-4">
+          <a
+            href="https://maps.google.com/?q=Pondok+Santap+Raja+Gurame+Bandar+Lampung"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-orange-600 text-white px-4 py-2 rounded-lg shadow hover:bg-orange-700 transition-colors text-sm font-medium"
+          >
+            Buka di Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="bg-orange-600 text-white py-8">
