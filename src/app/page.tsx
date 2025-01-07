@@ -1,11 +1,10 @@
 "use client";
-import { useState, useEffect } from "react"; 
-
-// ... (kode state dan data tetap sama)
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("Makanan");
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeSection, setActiveSection] = useState("home");
 
   const slides = [
     {
@@ -155,6 +154,34 @@ export default function Home() {
   ];
 
   useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "menu", "about", "contact"];
+      let maxVisibleSection = sections[0];
+      let maxVisibleArea = 0;
+
+      sections.forEach((sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+          
+          if (visibleHeight > maxVisibleArea) {
+            maxVisibleArea = visibleHeight;
+            maxVisibleSection = sectionId;
+          }
+        }
+      });
+
+      setActiveSection(maxVisibleSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) =>
         prevSlide === slides.length - 1 ? 0 : prevSlide + 1
@@ -166,58 +193,73 @@ export default function Home() {
 
   return (
     <>
-    <title>Restoran Raja Gurame</title>
-    <div className="min-h-screen bg-gradient-to-r from-orange-100 via-orange-200 to-orange-100">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg z-50">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-          <div className="flex items-center">
-          <p className="h-25 w-20 m-2" style={{ display: 'inline-block', whiteSpace: 'nowrap', fontSize: '24px', fontWeight: 'bold' }}>
-  Raja Gurame
-</p>
-          </div>
-          </div>
-            <div className="space-x-6">
-              <a
-                href="#home"
-                className="text-gray-600 hover:text-orange-600 transition-colors duration-300"
-              >
-                Home
-              </a>
-              <a
-                href="#menu"
-                className="text-gray-600 hover:text-orange-600 transition-colors duration-300"
-              >
-                Menu
-              </a>
-              <a
-                href="#about"
-                className="text-gray-600 hover:text-orange-600 transition-colors duration-300"
-              >
-                About
-              </a>
-              <a
-                href="#contact"
-                className="text-gray-600 hover:text-orange-600 transition-colors duration-300"
-              >
-                Contact
-              </a>
+      <title>Restoran Raja Gurame</title>
+      <div className="min-h-screen bg-gradient-to-r from-orange-100 via-orange-200 to-orange-100">
+        <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg z-50">
+          <div className="container mx-auto px-6 max-w-6xl">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center">
+                <div className="flex items-center">
+                  <p className="h-25 w-20 m-2" style={{ display: 'inline-block', whiteSpace: 'nowrap', fontSize: '24px', fontWeight: 'bold' }}>
+                    Raja Gurame
+                  </p>
+                </div>
+              </div>
+              <div className="space-x-6">
+                <a
+                  href="#home"
+                  className={`transition-colors duration-300 ${
+                    activeSection === "home"
+                      ? "text-orange-600 font-semibold"
+                      : "text-gray-600 hover:text-orange-600"
+                  }`}
+                >
+                  Home
+                </a>
+                <a
+                  href="#menu"
+                  className={`transition-colors duration-300 ${
+                    activeSection === "menu"
+                      ? "text-orange-600 font-semibold"
+                      : "text-gray-600 hover:text-orange-600"
+                  }`}
+                >
+                  Menu
+                </a>
+                <a
+                  href="#about"
+                  className={`transition-colors duration-300 ${
+                    activeSection === "about"
+                      ? "text-orange-600 font-semibold"
+                      : "text-gray-600 hover:text-orange-600"
+                  }`}
+                >
+                  About
+                </a>
+                <a
+                  href="#contact"
+                  className={`transition-colors duration-300 ${
+                    activeSection === "contact"
+                      ? "text-orange-600 font-semibold"
+                      : "text-gray-600 hover:text-orange-600"
+                  }`}
+                >
+                  Contact
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
 
       {/* Hero Section */}
       <section
-        id="home"
-        className="relative min-h-screen flex items-center justify-center pt-16"
-        style={{
-          backgroundImage: `url(${slides[currentSlide].image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+          id="home"
+          className="relative min-h-screen flex items-center justify-center pt-16"
+          style={{
+            backgroundImage: `url(${slides[currentSlide].image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 text-center text-white px-4 max-w-3xl">
