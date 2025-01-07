@@ -163,6 +163,8 @@ export default function Home() {
   }, [slides.length]);
 
   return (
+    <>
+    <title>Restoran Raja Gurame</title>
     <div className="min-h-screen bg-gradient-to-r from-orange-100 via-orange-200 to-orange-100">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg z-50">
@@ -170,7 +172,9 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
           <div className="flex items-center">
-          <img src="logo.png" alt="Logo Raja Gurame" className="h-25 w-20 m-2" />
+          <p className="h-25 w-20 m-2" style={{ display: 'inline-block', whiteSpace: 'nowrap', fontSize: '24px', fontWeight: 'bold' }}>
+  Raja Gurame
+</p>
           </div>
           </div>
             <div className="space-x-6">
@@ -328,5 +332,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
