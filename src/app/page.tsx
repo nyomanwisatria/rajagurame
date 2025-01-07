@@ -217,16 +217,6 @@ export default function Home() {
                   Home
                 </a>
                 <a
-                  href="#menu"
-                  className={`transition-colors duration-300 ${
-                    activeSection === "menu"
-                      ? "text-orange-600 font-semibold"
-                      : "text-gray-600 hover:text-orange-600"
-                  }`}
-                >
-                  Menu
-                </a>
-                <a
                   href="#about"
                   className={`transition-colors duration-300 ${
                     activeSection === "about"
@@ -235,6 +225,16 @@ export default function Home() {
                   }`}
                 >
                   About
+                </a>
+                <a
+                  href="#menu"
+                  className={`transition-colors duration-300 ${
+                    activeSection === "menu"
+                      ? "text-orange-600 font-semibold"
+                      : "text-gray-600 hover:text-orange-600"
+                  }`}
+                >
+                  Menu
                 </a>
                 <a
                   href="#contact"
@@ -252,7 +252,7 @@ export default function Home() {
         </nav>
 
       {/* Hero Section */}
-      <section
+       <section
           id="home"
           className="relative min-h-screen flex items-center justify-center pt-16"
           style={{
