@@ -8,11 +8,11 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
 
   const contactInfo = {
-    phone: "082281431287",
+    phone: "+6282186386670",
     instagram: "@rajagurame",
     hours: "10:00 - 22:00",
     address:
-      "Gg. Sawo II No.33, Segala Mider, Kec. Tj. Karang Bar., Bandar Lampung",
+      "Pondok Santap Raja Gurame, Gg. Sawo II No.33, Segala Mider, Kec. Tj. Karang Bar., Kota Bandar Lampung, Lampung 35125",
   };
 
   const slides = [
@@ -358,7 +358,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
               <div className="rounded-xl overflow-hidden shadow-lg h-[400px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.436873493189!2d105.21563797423465!3d-5.3592333537669845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40dae2c5c531b3%3A0xda876a0f2c7ddb97!2sGg.%20Sawo%20II%20No.33%2C%20Segala%20Mider%2C%20Kec.%20Tj.%20Karang%20Bar.%2C%20Kota%20Bandar%20Lampung%2C%20Lampung%2035125!5e0!3m2!1sid!2sid!4v1704638016635!5m2!1sid!2sid"
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.1482130649856!2d105.24430517523254!3d-5.39437429458468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40daec45c84ddb%3A0x762f01b4be3ce046!2sPondok%20Santap%20Raja%20Gurame!5e0!3m2!1sid!2sid!4v1736248752165!5m2!1sid!2sid"
                   className="w-full h-full border-0"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
