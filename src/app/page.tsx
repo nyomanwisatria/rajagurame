@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react"; 
 
+// ... (kode state dan data tetap sama)
+
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("Makanan");
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -217,7 +219,7 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 text-center text-white px-4 max-w-3xl">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
             {slides[currentSlide].title}
