@@ -200,7 +200,7 @@ export default function Home() {
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">
                 <div className="flex items-center">
-                  <p className="h-25 w-20 m-2" style={{ display: 'inline-block', whiteSpace: 'nowrap', fontSize: '24px', fontWeight: 'bold' }}>
+                <p className="h-25 w-20 m-2 text-black inline-block whitespace-nowrap text-2xl font-bold">
                     Raja Gurame
                   </p>
                 </div>
